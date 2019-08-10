@@ -1,6 +1,7 @@
 {
   "name": "personal-website",
   "version": "0.1.0",
+  "node": "12.7.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.3.0",
@@ -10,6 +11,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-pino-logger": "^4.0.0",
+    "node": "^12.8.0",
     "node-env-run": "^3.0.2",
     "nodemailer": "^6.3.0",
     "nodemon": "^1.19.1",
