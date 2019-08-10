@@ -296,12 +296,16 @@ a {
   color: white;
 }
 
-#contact {
-  background-color: #494848;
-  padding-top: 5%;
+.contact {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(114, 99, 248, 0.85)), to(rgba(114, 99, 248, 0.85))), url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  background: linear-gradient(rgba(114, 99, 248, 0.85), rgba(114, 99, 248, 0.85)), url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-align: center;
 }
 
-#contact h1 {
+.contact h1 {
   text-align: center;
   font-weight: 300;
   font-size: 2.5em;
@@ -309,9 +313,20 @@ a {
   padding-bottom: 1.5%;
 }
 
-#contact hr {
+.contact hr {
   width: 50vw;
   margin-bottom: 5%;
+}
+
+.contact .submitBtn {
+  margin-top: 3%;
+  font-size: 1.5em;
+  background-color: white;
+  color: #673ab7;
+}
+
+.contact .submitBtn:hover {
+  background-color: black;
 }
 
 footer {
@@ -319,6 +334,8 @@ footer {
   text-align: center;
   position: relative;
   bottom: 0;
+  top: 0;
+  margin-top: 0;
 }
 
 @media (min-width: 850px) {
@@ -339,6 +356,9 @@ footer {
   }
   .projectsPage {
     width: 80%;
+  }
+  .contact {
+    padding: 10% 14% 10% 14%;
   }
 }
 /*# sourceMappingURL=App.css.map */

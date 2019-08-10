@@ -1,15 +1,7 @@
 import React from 'react'
 import SocialLinks from '../components/SocialLinks';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Tooltip from '@material-ui/core/Tooltip';
-// SVG's
-import ReactLogo from '../images/svg-icons/react.svg';
-import html5 from '../images/svg-icons/html5.svg';
-import css3 from '../images/svg-icons/css3.svg';
-import javascript from '../images/svg-icons/javascript.svg';
-import redux from '../images/svg-icons/redux.svg';
-import pug from '../images/svg-icons/pug.png';
+
 
 
 export default function about() {
