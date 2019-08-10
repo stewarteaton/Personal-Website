@@ -1,7 +1,9 @@
 {
   "name": "personal-website",
   "version": "0.1.0",
-  "node": "12.7.0",
+  "engines":{
+    "node": "12.7.0"
+  },
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.3.0",
