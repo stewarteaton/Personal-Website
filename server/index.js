@@ -20,7 +20,9 @@ app.use((request, response, next) => {
   next();
 });
 
-
+app.get('/', (req, res) => {
+  res.render('index')''
+})
 // Function to send message from Contact Form 
 app.post('/send', (req, res) => {
             console.log(req.body.userData.email);
