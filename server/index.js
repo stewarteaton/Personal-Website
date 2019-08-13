@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const pino = require('express-pino-logger')();
+
 const nodemailer = require('nodemailer');
 
 // const creds = require("./config.js");
@@ -20,9 +21,7 @@ app.use((request, response, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  res.render('index');
-})
+
 // Function to send message from Contact Form 
 app.post('/send', (req, res) => {
             console.log(req.body.userData.email);
@@ -43,10 +42,9 @@ app.post('/send', (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: req.body.userData.email, 
-        to: process.env.EMAIL, 
-        subject: req.body.userData.subject, 
-        html: 'From: ' + req.body.userData.email + '<br/><br/>' + req.body.userData.message, 
-        // html: '<b>From my website</b>'
+        to:  process.env.EMAIL, 
+        subject:  'Stews Website Contact Form', 
+        html: 'From: ' + req.body.userData.email + '<br/>Name: '+ req.body.userData.name +'<br/><br/>' + req.body.userData.message, 
     };
 
     // send mail with defined transport object

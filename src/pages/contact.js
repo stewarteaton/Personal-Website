@@ -5,10 +5,9 @@ import CssTextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { withStyles } from '@material-ui/styles';
+import SocialLinks from '../components/SocialLinks';
 
 import axios from 'axios';
-import { green } from '@material-ui/core/colors';
-import { whileStatement } from '@babel/types';
 
 const styles = {
     textInput:{
@@ -19,8 +18,9 @@ const styles = {
         borderColor: "white !important",
         color: 'white',
     },
-
-
+    progressSpinner: {
+        position: 'absolute'
+    }
 
 }
 
@@ -31,32 +31,41 @@ class contact extends Component {
         this.state = {
             email: '',
             subject: '',
-            message: ''
+            message: '',
+            loading: false
         };
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit = async(event) => {
+        this.setState({loading: true});
         const userData = {
             name: this.state.name,
             email: this.state.email,
             message: this.state.message
         };
         event.preventDefault();
-            await axios.post('http://localhost:3001/send', {
+            await axios.post('https://stewart-eaton.herokuapp.com/send', {
             userData
           })
           .then(function (response) {
-            console.log('worked');
+
+            console.log('worked');  
             console.log(response.statusText);
             alert('Thank you! Your message has been sent.');
           })
           .catch(function (error) {
             console.log('did not work');
             console.log(error);
+            alert('Error: message was not sent. Use email in my Resume please');
         });
-
-
+        // clears input form after submitted
+        this.setState({
+            name: '',
+            email: '',
+            message: '',
+            loading:false
+        })
     }
 
     handleChange = (event) => {
@@ -67,7 +76,7 @@ class contact extends Component {
 
     render(){
         const { classes } = this.props;
-
+        const { loading } = this.state;
         return(
         <div id='contact' className='contact'>
             <div className='imgCover'>
@@ -75,7 +84,7 @@ class contact extends Component {
             <Fragment>
                 <h1>Contact Me</h1>
                 <hr />
-
+            <SocialLinks/>
             <form onSubmit={this.handleSubmit} >
                 <Grid container spacing={2}>
                     <Grid item sm={6} xs={12}>
@@ -88,7 +97,10 @@ class contact extends Component {
                 </Grid>
                         <TextField required multiline={true} rows={7} rowsMax={10} id="message" name="message" label="Message" className={classes.textInput} margin="normal" variant='outlined' value={this.state.message} onChange={this.handleChange}  InputLabelProps={{style: { color: 'white'}}} InputProps={{ classes:{ notchedOutline: classes.notchedOutline}, style: {color: 'white', fontSize: '1.3em'}  }} fullWidth />
                 
-                <Button type="submit" variant="contained" color="primary" className='submitBtn'>Submit</Button>
+                <Button type="submit" variant="contained" color="primary" className='submitBtn' disabled={loading}>Submit
+                {/* check to see if button has already been clicked and is loading */}
+                {loading && (<CircularProgress size={50} className={classes.progressSpinner} />)}
+                </Button>
 
             </form> 
         </Fragment>

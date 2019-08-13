@@ -113,7 +113,7 @@ a {
   font-size: 1.1em;
 }
 
-.aboutPage .aboutInfo a {
+.aboutPage .aboutInfo .portfolioLink, .aboutPage .aboutInfo .emailLink {
   color: #94ff9a;
   text-decoration: underline;
 }
@@ -123,6 +123,12 @@ a {
   display: inline;
 }
 
+.aboutPage .homeSocialLinks {
+  width: 400px;
+  background-color: #e0e0e0;
+  text-align: center;
+}
+
 .aboutPage .socialIcons {
   font-size: 3.5em;
   color: #673ab7;
@@ -130,12 +136,31 @@ a {
   margin: 0 auto;
 }
 
-.aboutPage .socialIcons i {
-  margin: 0 5% 0 5%;
+.aboutPage a {
+  text-decoration: none;
+}
+
+.aboutPage a .fa-linkedin {
+  color: #0077B5;
+}
+
+.aboutPage a .fa-github {
   color: #673ab7;
 }
 
-.aboutPage .socialIcons i:hover {
+.aboutPage a .fa-instagram {
+  color: #C13584;
+}
+
+.aboutPage a .fa-facebook-square {
+  color: #3b5998;
+}
+
+.aboutPage a i {
+  margin: 0 5% 0 5%;
+}
+
+.aboutPage a i:hover {
   color: black;
   cursor: pointer;
 }
@@ -319,6 +344,23 @@ a {
   margin-bottom: 5%;
 }
 
+.contact .socialIcons {
+  z-index: 4;
+  font-size: 3em;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contact .socialIcons i {
+  margin: 0 5% 0 5%;
+  color: white;
+}
+
+.contact .socialIcons i:hover {
+  color: black;
+  cursor: pointer;
+}
+
 .contact .submitBtn {
   margin-top: 3%;
   font-size: 1.5em;
@@ -335,8 +377,6 @@ footer {
   text-align: center;
   position: relative;
   bottom: 0;
-  top: 0;
-  margin-top: 0;
 }
 
 @media (min-width: 850px) {

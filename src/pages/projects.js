@@ -18,7 +18,7 @@ export default function projects() {
         <div className='projectsPage' id='projects'>
             <Fragment>
                 <h1 className='projectsPageTitle'>Projects</h1>
-                <h4 className='projectsPageTitle2'>Here are some projects I've recently developed</h4>
+                <h4 className='projectsPageTitle2'>Here are some projects I've recently worked on</h4>
                 <hr />
             </Fragment>
             <Grid container spacing={2}>
