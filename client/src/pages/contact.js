@@ -19,7 +19,8 @@ const styles = {
         color: 'white',
     },
     progressSpinner: {
-        position: 'absolute'
+        position: 'absolute',
+        color: 'green'
     }
 
 }
@@ -45,7 +46,7 @@ class contact extends Component {
             message: this.state.message
         };
         event.preventDefault();
-            await axios.post('https://stewart-eaton.herokuapp.com/send', {
+            await axios.post('/api/send', {
             userData
           })
           .then(function (response) {

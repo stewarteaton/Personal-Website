@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // MUI stuff
 import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import Toolbar from '@material-ui/core/ToolBar';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import Button from '@material-ui/core/Button';

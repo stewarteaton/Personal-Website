@@ -8,7 +8,7 @@ import html5 from '../images/svg-icons/html5.svg';
 import css3 from '../images/svg-icons/css3.svg';
 import javascript from '../images/svg-icons/javascript.svg';
 import redux from '../images/svg-icons/redux.svg';
-import pug from '../images/svg-icons/pug.png';
+import pug from '../images/svg-icons/pug.svg';
 import nodejs from '../images/svg-icons/node.js.svg';
 import mongodb from '../images/svg-icons/mongodb.svg';
 import firebase from '../images/svg-icons/firebase.svg';
